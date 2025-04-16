@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ethan and Katie's Love Site</title>
+  <title>Ethan's Love Site</title>
   <style>
     body, html {
       margin: 0;
@@ -11,6 +11,7 @@
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background-color: #fff0f5;
       color: #a4597b;
+      line-height: 1.6;
     }
 
     #loader {
@@ -41,6 +42,7 @@
       border: 2px solid #ffb6d9;
       border-radius: 10px;
       margin-top: 1rem;
+      width: 250px;
     }
 
     #unlockBtn {
@@ -71,8 +73,34 @@
     }
 
     .section {
-      padding: 2rem;
+      background-color: #ffe6f0;
+      padding: 3rem 2rem;
+      margin: 2rem auto;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 1000px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff69b4;
+    }
+
+    .section p,
+    .section ul {
+      font-size: 1.2rem;
+      color: #a4597b;
+      text-align: left;
+      margin-top: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section ul {
+      list-style-type: '🌸 ';
     }
 
     button {
@@ -115,6 +143,21 @@
       font-size: 0.9rem;
       color: #a4597b;
     }
+
+    iframe {
+      border-radius: 15px;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 600px;
+      height: 352px;
+    }
+
+    .music-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -129,7 +172,7 @@
 
 <div id="content">
   <header>
-    <h1>Katie & Ethan</h1>
+    <h1>Ethan & Katie</h1>
     <p>Our little cozy world</p>
   </header>
 
@@ -140,13 +183,15 @@
       <source src="https://cdn.pixabay.com/download/audio/2022/11/16/audio_9f370b215e.mp3?filename=sweet-relaxing-ambient-119110.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
-    <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
+    <div class="music-controls">
+      <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
+    </div>
   </div>
 
   <!-- Things I Love About Her Section -->
   <div class="section">
     <h2>💗 Things I Love About Her</h2>
-    <ul style="list-style-type: '🌸 '; text-align: left; max-width: 600px; margin: auto;">
+    <ul>
       <li>Her little laugh that makes my whole day brighter</li>
       <li>The way she always checks in on me and makes me feel wanted</li>
       <li>How she gets shy but still wants to try things with me</li>
@@ -179,7 +224,7 @@
   <div class="section">
     <h2>🎵 Our Playlist</h2>
     <p>Cozy love songs for Ethan & Katie 💖</p>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1GWDE91AHXWphOPAZDOkX0?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/playlist/1GWDE91AHXWphOPAZDOkX0?utm_source=generator" frameborder="0" allowfullscreen=""></iframe>
   </div>
 
   <footer>
