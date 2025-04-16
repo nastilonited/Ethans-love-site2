@@ -12,7 +12,9 @@
       background-color: #fff0f5;
       color: #a4597b;
       line-height: 1.6;
-      background-image: url('https://www.transparenttextures.com/patterns/baby-blue.png');
+      background-image: url('https://www.transparenttextures.com/patterns/baby-blue.png'), url('https://i.pinimg.com/originals/76/f2/2d/76f22d981a957db59db94430e307c374.png');
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     #loader {
@@ -66,12 +68,22 @@
       padding: 2rem;
       text-align: center;
       border-bottom: 4px dotted #ffb6d9;
+      position: relative;
+      background-image: url('https://i.pinimg.com/originals/ab/df/d7/abdfd72864ff6b568e3e8e1c3e73a9d0.png');
+      background-size: cover;
+      background-position: center;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       margin: 0;
       color: #ff69b4;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      color: #a4597b;
+      font-style: italic;
     }
 
     .section {
@@ -161,6 +173,69 @@
       cursor: pointer;
       margin-top: 1rem;
     }
+
+    /* Additional Cute Graphics */
+    .clouds, .rainbows, .fairies, .diapers, .bottles, .stuffed-animals {
+      position: absolute;
+      animation: move 10s linear infinite;
+    }
+
+    .clouds {
+      background-image: url('https://i.pinimg.com/originals/ea/0d/7f/ea0d7f5b0e674dc5ac68ca5ca1408cf7.png');
+      width: 200px;
+      height: 100px;
+      top: 10%;
+      left: 10%;
+    }
+
+    .rainbows {
+      background-image: url('https://i.pinimg.com/originals/23/7b/ea/237bea3cf7ec2e72ab314cccf7b1a261.png');
+      width: 250px;
+      height: 100px;
+      top: 20%;
+      left: 40%;
+    }
+
+    .fairies {
+      background-image: url('https://i.pinimg.com/originals/82/1b/3a/821b3a39d7a91b1e207029705c6a0339.png');
+      width: 50px;
+      height: 100px;
+      top: 30%;
+      left: 60%;
+    }
+
+    .diapers {
+      background-image: url('https://i.pinimg.com/originals/a4/74/c6/a474c6f6e43a79dcb29025d78bc314b4.png');
+      width: 120px;
+      height: 100px;
+      top: 50%;
+      left: 70%;
+    }
+
+    .bottles {
+      background-image: url('https://i.pinimg.com/originals/ed/29/c7/ed29c758dfd7a22f35b8b7fa5a0fcb7d.png');
+      width: 60px;
+      height: 150px;
+      top: 40%;
+      left: 80%;
+    }
+
+    .stuffed-animals {
+      background-image: url('https://i.pinimg.com/originals/ee/0b/c7/ee0bc7f06c5d08e879ec3db1dba0f9c9.png');
+      width: 150px;
+      height: 150px;
+      top: 10%;
+      left: 90%;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100vw);
+      }
+    }
   </style>
 </head>
 <body>
@@ -217,7 +292,7 @@
   <div class="section">
     <h2>📸 Our Gallery</h2>
     <div class="gallery">
-      <img src="https://via.placeholder.com/200" alt="image1">
+      <img src="https://drive.google.com/uc?export=view&id=1zUzscLWQS3XGCzfbkV3Ag6VLWp_2rLcX" alt="Cute image">
       <img src="https://via.placeholder.com/200" alt="image2">
       <img src="https://via.placeholder.com/200" alt="image3">
       <img src="https://via.placeholder.com/200" alt="image4">
