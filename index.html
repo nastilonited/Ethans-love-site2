@@ -12,6 +12,7 @@
       background-color: #fff0f5;
       color: #a4597b;
       line-height: 1.6;
+      background-image: url('https://www.transparenttextures.com/patterns/baby-blue.png');
     }
 
     #loader {
@@ -70,23 +71,25 @@
     header h1 {
       font-size: 3rem;
       margin: 0;
+      color: #ff69b4;
     }
 
     .section {
       background-color: #ffe6f0;
-      padding: 3rem 2rem;
+      padding: 2rem;
       margin: 2rem auto;
       border-radius: 15px;
-      width: 80%;
-      max-width: 1000px;
+      width: 90%;
+      max-width: 900px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-image: url('https://www.transparenttextures.com/patterns/dark-bamboo.png');
+      color: #ff69b4;
     }
 
     .section h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: #ff69b4;
     }
 
     .section p,
@@ -100,18 +103,7 @@
     }
 
     .section ul {
-      list-style-type: '🌸 ';
-    }
-
-    button {
-      background-color: #ffb6d9;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 15px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1rem;
+      list-style-type: '💖 ';
     }
 
     .gallery {
@@ -147,9 +139,10 @@
     iframe {
       border-radius: 15px;
       margin-top: 2rem;
-      width: 100%;
-      max-width: 600px;
-      height: 352px;
+      width: 80%;
+      max-width: 300px;
+      height: 250px;
+      margin: 0 auto;
     }
 
     .music-controls {
@@ -158,6 +151,18 @@
       align-items: center;
       margin-top: 1rem;
     }
+
+    .section button {
+      background-color: #ffb6d9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
   </style>
 </head>
 <body>
@@ -176,18 +181,6 @@
     <p>Our little cozy world</p>
   </header>
 
-  <!-- Music Player -->
-  <div class="section">
-    <h2>🎼 Sweetie Music</h2>
-    <audio id="bgMusic" loop>
-      <source src="https://cdn.pixabay.com/download/audio/2022/11/16/audio_9f370b215e.mp3?filename=sweet-relaxing-ambient-119110.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <div class="music-controls">
-      <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
-    </div>
-  </div>
-
   <!-- Things I Love About Her Section -->
   <div class="section">
     <h2>💗 Things I Love About Her</h2>
@@ -204,26 +197,21 @@
   <div class="section">
     <h2>📖 Our Story</h2>
     <p>
-      It started like something out of a soft daydream. We didn’t rush – we found comfort in each other’s pace.
-      From the late-night talks to the sleepy “good morning” messages, every moment made me fall more for her.
-      Even when we're apart, I feel her with me. It’s real. It's deep. It’s ours.
+      Our love started with the simplest of moments. The late-night talks, the sleepy good morning texts. Every shared laugh, every deep conversation, they made me feel like I had found someone special. The distance didn’t matter. Katie has always been the most comforting, thoughtful person, and I fall more for her every day.
     </p>
   </div>
 
-  <!-- Future Plans Together Section -->
+  <!-- Future Plans Section -->
   <div class="section">
     <h2>🌈 Our Future Plans</h2>
     <p>
-      We’re gonna build something so soft and strong together. Move in close, start our own little cozy world.
-      One day we’ll have a home filled with laughter, shared playlists, and inside jokes no one else gets.
-      Maybe a cabin somewhere quiet, maybe a family one day – but definitely us. Always us.
+      Our future? It’s going to be filled with warmth, cuddles, and lots of adventures together. Whether it's moving closer to each other or building our own home, it’ll be a space full of love, shared playlists, and laughter. I can’t wait for the day when our plans turn into reality. Our family, our little home, our future, hand-in-hand.
     </p>
   </div>
 
   <!-- Spotify Playlist Embed -->
   <div class="section">
-    <h2>🎵 Our Playlist</h2>
-    <p>Cozy love songs for Ethan & Katie 💖</p>
+    <h2>🎶 Our Playlist</h2>
     <iframe src="https://open.spotify.com/embed/playlist/1GWDE91AHXWphOPAZDOkX0?utm_source=generator" frameborder="0" allowfullscreen=""></iframe>
   </div>
 
@@ -251,17 +239,8 @@
       alert("Oopsies! That's not the secret password! 🥺");
     }
   });
-
-  // Music Play/Pause Function
-  function toggleMusic() {
-    var music = document.getElementById("bgMusic");
-    if (music.paused) {
-      music.play();
-    } else {
-      music.pause();
-    }
-  }
 </script>
 
 </body>
 </html>
+
