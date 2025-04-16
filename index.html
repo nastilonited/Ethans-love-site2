@@ -3,145 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ethan & Love</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <title>Katie and Ethans's Love Site</title>
   <style>
-    body {
+    body, html {
       margin: 0;
-      font-family: 'Quicksand', sans-serif;
-      background: #fff6fc;
-      color: #4a2d39;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fff0f5;
+      color: #a4597b;
+    }
+
+    #loader {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: #ffe6f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: #ff69b4;
+      z-index: 1000;
+    }
+
+    #passwordScreen {
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
-      background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #fff0f5;
     }
 
-    header {
-      background: linear-gradient(135deg, #ffe0f0, #ffccf9);
-      padding: 3rem 1rem 2rem;
-      text-align: center;
-      border-bottom: 4px dotted #fcbad3;
-    }
-
-    header h1 {
-      font-family: 'Sacramento', cursive;
-      font-size: 4.5rem;
-      color: #c94f7c;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: #9c5d72;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2.5rem;
-      background: #ffeafd;
-      border-radius: 25px;
-      border: 3px dashed #ffcce6;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      position: relative;
-    }
-
-    .section::before {
-      content: "💖";
-      font-size: 2rem;
-      position: absolute;
-      top: -1rem;
-      left: -1rem;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #c94f7c;
-    }
-
-    .section p, .section ul {
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      list-style: "🌸 ";
-    }
-
-    .baby-talk {
-      background: #fff0f8;
-      border-radius: 20px;
-      padding: 1.5rem;
-      border: 2px dashed #ffb3d1;
-      font-size: 1.05rem;
-      font-style: italic;
-      color: #9c5970;
+    #passwordInput {
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #ffb6d9;
+      border-radius: 10px;
       margin-top: 1rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #a8747d;
-      background: #ffe6f0;
-      border-top: 3px dotted #ffc6d0;
-      margin-top: auto;
+    #unlockBtn {
+      background-color: #ffb6d9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
     }
 
-    .hearts {
-      font-size: 1.3rem;
+    #content {
+      display: none;
+    }
+
+    header {
+      background-color: #ffcce6;
+      padding: 2rem;
       text-align: center;
-      padding-top: 0.5rem;
-      color: #ff6fa0;
+      border-bottom: 4px dotted #ffb6d9;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    button {
+      background-color: #ffb6d9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+
+    .gallery img {
+      border: 5px solid #ffcce6;
+      border-radius: 20px;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      background-color: #ffe6f0;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #a4597b;
     }
   </style>
 </head>
 <body>
 
+<div id="loader">🌸 Loading the cuddles... 🌸</div>
+
+<div id="passwordScreen">
+  <h2>✨ Enter the secret snuggle password ✨</h2>
+  <input type="password" id="passwordInput" placeholder="Password please!">
+  <button id="unlockBtn">Unlock 💕</button>
+</div>
+
+<div id="content">
   <header>
-    <h1>Ethan & Love</h1>
-    <p>my squishy girl 🧸💗 forever and ever</p>
-    <div class="hearts">⋆｡‧˚ʚ♡ɞ˚‧｡⋆</div>
+    <h1>Katie & Ethan</h1>
+    <p>Our little cozy world</p>
   </header>
 
   <div class="section">
-    <h2>Our Story</h2>
-    <p>
-      Once upon a fluffy pink cloud, Ethan met the softest, sweetest girl in the whole world.  
-      They laughed, snuggled, and built a little love bubble filled with trust and baby cuddles.  
-      This is our place where all the softest feelings live.
-    </p>
+    <h2>Our Relationship</h2>
+    <p>This is a soft, dreamy place for me and Ethan. Full of cuddles, kisses, and little pink secrets.</p>
+    <button onclick="alert('I wuv you!')">Click me!</button>
   </div>
 
   <div class="section">
-    <h2>Things I Wuv About You</h2>
-    <ul>
-      <li>Your giggles and the way you scrunch your nose like a baby bunbun</li>
-      <li>The way you say "mine" and mean it</li>
-      <li>You're my safe space, my princess, my cozy little cupcake</li>
-    </ul>
-
-    <div class="baby-talk">
-      you da pwettiest baby girl eber... my wittle softy girl... i hold u tight foreber n ever 🥺💗💞
+    <h2>Our Snuggle Moments</h2>
+    <div class="gallery">
+      <img src="https://placekitten.com/250/250" alt="cutie 1">
+      <img src="https://placekitten.com/251/251" alt="cutie 2">
+      <img src="https://placekitten.com/252/252" alt="cutie 3">
+      <img src="https://placekitten.com/253/253" alt="cutie 4">
     </div>
   </div>
 
   <div class="section">
-    <h2>Our Future</h2>
-    <p>
-      Cabins, cuddle piles, sleepy morning kisses, matching pajamas, building a pink life full of warm things.  
-      I can't wait to spoil you, protect you, and grow old holding your hand every night.
-    </p>
+    <h2>🎵 Our Playlist</h2>
+    <p>Cozy love songs for Ethan & Katie 💖</p>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1GWDE91AHXWphOPAZDOkX0?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
   <footer>
-    Made wif snuggles by Ethan 🧸 | © 2025
+    Made with extra fluff and love by Nastilonited
   </footer>
+</div>
+
+<script>
+  // Hide loader after 2 seconds
+  window.onload = function () {
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+    }, 2000);
+  };
+
+  const correctPassword = "Katie23";
+
+  document.getElementById("unlockBtn").addEventListener("click", function () {
+    const input = document.getElementById("passwordInput").value;
+    if (input === correctPassword) {
+      document.getElementById("passwordScreen").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    } else {
+      alert("Oopsies! That's not the secret password! 🥺");
+    }
+  });
+</script>
 
 </body>
 </html>
