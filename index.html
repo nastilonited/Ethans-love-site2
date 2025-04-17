@@ -1,273 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ethan's Love Site</title>
+  <meta charset="UTF-8">
+  <title>Our Love Story</title>
   <style>
-    body, html {
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe0ec, #fff5f0);
       margin: 0;
       padding: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #fff0f5;
-      color: #a4597b;
-      line-height: 1.6;
-      background-image: url('https://www.transparenttextures.com/patterns/baby-blue.png');
       overflow-x: hidden;
     }
-
-    #loader {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      background: #ffe6f0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      color: #ff69b4;
-      z-index: 1000;
-    }
-
-    #loader img {
-      width: 150px;
-      height: 150px;
-      margin-bottom: 20px;
-    }
-
-    #passwordScreen {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #fff0f5;
-    }
-
-    #passwordInput {
-      padding: 10px;
-      font-size: 1rem;
-      border: 2px solid #ffb6d9;
-      border-radius: 10px;
-      margin-top: 1rem;
-      width: 250px;
-    }
-
-    #unlockBtn {
-      background-color: #ffb6d9;
+    header {
+      background-color: #ff6b81;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 15px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-
-    #content {
-      display: none;
+      padding: 1em;
+      text-align: center;
       position: relative;
     }
-
-    header {
-      background-color: #ffcce6;
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 4px dotted #ffb6d9;
+    .countdown {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1em;
+      color: white;
     }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      color: #ff69b4;
-      font-family: 'Brush Script MT', cursive;
-      font-weight: bold;
-    }
-
     .section {
-      background-color: #ffe6f0;
-      padding: 2rem;
-      margin: 2rem auto;
-      border-radius: 15px;
-      width: 90%;
+      padding: 3em 1.5em;
       max-width: 900px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      background-image: url('https://www.transparenttextures.com/patterns/dark-bamboo.png');
-      color: #ff69b4;
+      margin: auto;
     }
-
     .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      color: #ff6b81;
+      margin-bottom: 1em;
     }
-
-    .section p,
-    .section ul {
-      font-size: 1.2rem;
-      color: #a4597b;
-      text-align: left;
-      margin-top: 1rem;
-      max-width: 800px;
-      margin: 0 auto;
+    .section p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #333;
     }
-
-    .section ul {
-      list-style-type: '💖 ';
-    }
-
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 15px;
       justify-content: center;
     }
-
     .gallery img {
-      border: 5px solid #ffcce6;
-      border-radius: 20px;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.1);
-    }
-
-    footer {
-      background-color: #ffe6f0;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #a4597b;
-    }
-
-    iframe {
+      width: 250px;
+      height: auto;
       border-radius: 15px;
-      margin-top: 2rem;
-      width: 100%;
-      height: 380px;
-      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
+    audio {
+      display: block;
+      margin: 2em auto;
+    }
     .floating-decor {
       position: absolute;
-      z-index: 1;
+      z-index: 0;
+      opacity: 0.6;
       animation: float 6s ease-in-out infinite;
     }
-
     @keyframes float {
-      0% { transform: translateY(0); }
+      0% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
+      100% { transform: translateY(0px); }
     }
   </style>
 </head>
 <body>
 
-<div id="loader">
-  <img src="https://i.pinimg.com/originals/d6/e3/14/d6e314f235723f50200b00f7255a50c4.gif" alt="Pastel Puppy">
-  🌸 Loading the cuddles... 🌸
-</div>
-
-<div id="passwordScreen">
-  <h2>✨ Enter the secret snuggle password ✨</h2>
-  <input type="password" id="passwordInput" placeholder="Password please!">
-  <button id="unlockBtn">Unlock 💕</button>
-</div>
-
-<div id="content">
   <header>
-    <h1>Ethan & Katie</h1>
-    <p>Our little cozy world</p>
+    <h1>Our Love Story 💖</h1>
+    <div class="countdown" id="countdown"></div>
   </header>
 
-  <img class="floating-decor" src="https://clipart-library.com/images/8T65nAxAc.png" style="top: 50px; left: 50px; width: 60px;">
-  <img class="floating-decor" src="https://clipart-library.com/images/8T6oydqGT.png" style="top: 300px; right: 80px; width: 70px;">
-  <img class="floating-decor" src="https://clipart-library.com/images_k/stuffed-animal-transparent/stuffed-animal-transparent-13.png" style="bottom: 150px; left: 100px; width: 80px;">
-  <img class="floating-decor" src="https://clipart-library.com/img/1973272.png" style="bottom: 100px; right: 100px; width: 60px;">
-  <img class="floating-decor" src="https://clipart-library.com/images/8T64EyAeT.png" style="top: 200px; left: 200px; width: 50px;">
+  <!-- Floating Decorations -->
+  <img class="floating-decor" src="https://pngimg.com/uploads/cloud/cloud_PNG13.png" style="top: 50px; left: 50px; width: 60px;">
+  <img class="floating-decor" src="https://pngimg.com/uploads/rainbow/rainbow_PNG13383.png" style="top: 300px; right: 80px; width: 70px;">
+  <img class="floating-decor" src="https://pngimg.com/uploads/teddy_bear/teddy_bear_PNG16.png" style="bottom: 150px; left: 100px; width: 80px;">
+  <img class="floating-decor" src="https://pngimg.com/uploads/heart/heart_PNG51336.png" style="bottom: 100px; right: 100px; width: 60px;">
+  <img class="floating-decor" src="https://pngimg.com/uploads/star/star_PNG1596.png" style="top: 200px; left: 200px; width: 50px;">
 
+  <!-- Music Player -->
+  <audio controls autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Things I Love About Her -->
   <div class="section">
     <h2>💗 Things I Love About Her</h2>
-    <ul>
-      <li>Her little laugh that makes my whole day brighter</li>
-      <li>The way she always checks in on me and makes me feel wanted</li>
-      <li>How she gets shy but still wants to try things with me</li>
-      <li>Her love for cozy little moments – it’s everything</li>
-      <li>The way she looks at me like I’m her world</li>
-    </ul>
+    <p>
+      I love her heart — her gentle kindness, the way she genuinely cares about me, and how fiercely loyal she is. I love how goofy she gets when she’s comfortable, and how she always tries, even when she’s unsure. I love how safe she makes me feel. Her laugh, her honesty, her little habits, her body, her eyes — everything about her feels like home to me. She's beautiful in every way, and I'm so lucky to have her.
+    </p>
   </div>
 
+  <!-- Our Story -->
   <div class="section">
     <h2>📖 Our Story</h2>
     <p>
-      Our love started with the simplest of moments. The late-night talks, the sleepy good morning texts. Every shared laugh, every deep conversation, they made me feel like I had found someone special. The distance didn’t matter. Katie has always been the most comforting, thoughtful person, and I fall more for her every day.
+      We met during such an unexpected chapter in life — two people from different places, pulled together by something that just clicked. Even though we’ve had our ups and downs, our love keeps getting stronger. I’ve watched her grow, and I’ve grown with her. From sweet goodnight calls to seeing her smile in person, every step has been filled with love and purpose. I’ll never forget our little inside jokes, our sleepy moments, or how she looks at me when she’s trying not to blush.
     </p>
   </div>
 
+  <!-- Future Plans -->
   <div class="section">
-    <h2>🌈 Our Future Plans</h2>
+    <h2>🌅 Future Plans Together</h2>
     <p>
-      Our future? It’s going to be filled with warmth, cuddles, and lots of adventures together. Whether it's moving closer to each other or building our own home, it’ll be a space full of love, shared playlists, and laughter. I can’t wait for the day when our plans turn into reality. Our family, our little home, our future, hand-in-hand.
+      We dream of a place to call our own — a cozy home, probably near Saint Paul to start. We're saving up, building careers, and laying down every brick of our future with intention. A wedding someday, a little family, maybe even a backyard with a swing. But even before all that — there’s a cabin waiting for us in June, where we’ll celebrate our love in every way we’ve imagined. I can’t wait to see what we build together.
     </p>
   </div>
 
-  <div class="section">
-    <h2>🎶 Our Playlist</h2>
-    <iframe src="https://open.spotify.com/embed/playlist/1GWDE91AHXWphOPAZDOkX0?utm_source=generator" frameborder="0" allowfullscreen=""></iframe>
-  </div>
-
+  <!-- Gallery Section -->
   <div class="section">
     <h2>📸 Our Gallery</h2>
     <div class="gallery">
-      <img src="https://drive.google.com/uc?export=view&id=1zUzscLWQS3XGCzfbkV3Ag6VLWp_2rLcX" alt="Cute image">
-      <img src="https://via.placeholder.com/200" alt="Placeholder Image 2">
-      <img src="https://via.placeholder.com/200" alt="Placeholder Image 3">
-      <img src="https://via.placeholder.com/200" alt="Placeholder Image 4">
+      <img src="https://i.pinimg.com/originals/1e/f8/13/1ef813cf556ac9e2f4cfcffef6a08855.jpg" alt="Couple image 1">
+      <img src="https://i.pinimg.com/originals/99/b2/15/99b215ddc4a3b315f5c2e77cbf816d27.jpg" alt="Couple image 2">
+      <img src="https://i.pinimg.com/originals/17/68/4f/17684f7f05fd735312aad118f37b8f30.jpg" alt="Cute image 3">
+      <img src="https://i.pinimg.com/originals/f4/d6/d7/f4d6d78e73f22911d4961605c677a14f.jpg" alt="Cute image 4">
     </div>
   </div>
 
-  <div class="section">
-    <h2>😂 Silly Dad Jokes Just for You</h2>
-    <ul>
-      <li>Why don't eggs tell each other secrets? Because they might crack up! 🥚😄</li>
-      <li>What do you call cheese that isn't yours? Nacho cheese! 🧀🤣</li>
-      <li>Why did the teddy bear say no to dessert? Because it was stuffed! 🧸🍰</li>
-      <li>How do you organize a space party? You planet. 🌌🎉</li>
-      <li>Why did the banana go out with the prune? Because it couldn’t find a date! 🍌💖</li>
-    </ul>
-  </div>
+  <!-- Countdown Script -->
+  <script>
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date("June 8, 2025 00:00:00").getTime();
 
-  <footer>
-    Made with extra fluff and love by Ethan
-  </footer>
-</div>
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
 
-<script>
-  window.onload = function () {
-    setTimeout(() => {
-      document.getElementById("loader").style.display = "none";
-    }, 2000);
-  };
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  const correctPassword = "Katie23";
-  document.getElementById("unlockBtn").addEventListener("click", function () {
-    const input = document.getElementById("passwordInput").value;
-    if (input === correctPassword) {
-      document.getElementById("passwordScreen").style.display = "none";
-      document.getElementById("content").style.display = "block";
-    } else {
-      alert("Oopsies! That's not the secret password! 🥺");
+      countdown.innerHTML = `⏳ Trip Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        countdown.innerHTML = "🎉 It's cabin time!";
+      }
     }
-  });
-</script>
+
+    setInterval(updateCountdown, 1000);
+  </script>
 
 </body>
+</html>
+
 </html>
 
